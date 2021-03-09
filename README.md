@@ -2,8 +2,8 @@
 
 **SimpleTweet** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-##Part 2
-\## User Stories
+## Part 2
+## User Stories
 
 The following **required** functionality is completed:
 
@@ -32,7 +32,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src="walkthrough2.gif" width=250><br>
 
-##Part 1
+## Part 1
 ## User Stories
 
 The following **required** functionality is completed:
