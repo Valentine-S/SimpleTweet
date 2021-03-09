@@ -24,8 +24,8 @@ import com.github.scribejava.core.builder.api.BaseApi;
 public class TwitterClient extends OAuthBaseClient {
 	public static final BaseApi REST_API_INSTANCE = TwitterApi.instance(); // Change this
 	public static final String REST_URL = "https://api.twitter.com/1.1"; // Change this, base API URL
-	public static final String REST_CONSUMER_KEY = "af2B4XcWrtIn8om4TfTJlQJsZ";       // Change this inside apikey.properties    4KxocRp2Wh8RZ9cy1KJEjxGVy
-	public static final String REST_CONSUMER_SECRET = "AfVGtXpKzn46VeQ20IMnHKHiOyQ2cGAqIzDtplQvKvH2j7Hj71"; // Change this inside apikey.properties    EeyJ4vEZN3al7c0C13bMwAY3pGc2RASrampYtvJvnX1kLDHKJf
+	public static final String REST_CONSUMER_KEY = "hLAYLThiTleI65vRh7RlxTQsV";       // Change this inside apikey.properties    4KxocRp2Wh8RZ9cy1KJEjxGVy
+	public static final String REST_CONSUMER_SECRET = "pz50l3dmYpzvbcgnVnYOqHzMSf44eWqQuC394EAFti59arVCMG"; // Change this inside apikey.properties    EeyJ4vEZN3al7c0C13bMwAY3pGc2RASrampYtvJvnX1kLDHKJf
 
 	// Landing page to indicate the OAuth flow worked in case Chrome for Android 25+ blocks navigation back to the app.
 	public static final String FALLBACK_URL = "https://codepath.github.io/android-rest-client-template/success.html";
@@ -52,6 +52,15 @@ public class TwitterClient extends OAuthBaseClient {
 		params.put("since_id", 1);
 		client.get(apiUrl, params, handler);
 	}
+
+	public void publishTweet(String tweetContent, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/update.json");
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("status", tweetContent);
+		client.post(apiUrl, params, "", handler);
+	}
+
 
 	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
 	 * 	  i.e getApiUrl("statuses/home_timeline.json");
